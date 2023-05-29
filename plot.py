@@ -133,7 +133,7 @@ print(relation)
 
 def func(pct, allvals):
     absolute = int(np.round(pct / 100. * np.sum(allvals)))  # round: 반올림, sum: array 다 더하기
-    return "{:.1f}%\n원본: {:d}%".format(pct, absolute)
+    return "{:.1f}%\n원값: {:d}%".format(pct, absolute)
 
 
 # all, sex, age, income, education, job, job_detail, house, family, family_num, relation
@@ -172,5 +172,5 @@ for data, title in data_and_titles:
 
     plt.xticks(rotation=90)
     plt.title(title)
-    plt.savefig(f'{title}.png')
+    plt.savefig(f'{title}.png', bbox_inches='tight')
     plt.show()
