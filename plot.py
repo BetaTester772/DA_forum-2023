@@ -26,7 +26,7 @@ all = all.drop(
 print(all)
 
 # 성별
-sex = data.iloc[2:3, 0:25]
+sex = data.iloc[1:3, 0:25]
 
 # 사례수 삭제
 sex = sex.drop(
@@ -35,7 +35,7 @@ sex = sex.drop(
 print(sex)
 
 # 연령
-age = data.iloc[4:10, 0:25]
+age = data.iloc[3:10, 0:25]
 
 # 사례수 삭제
 age = age.drop(
@@ -44,7 +44,7 @@ age = age.drop(
 print(age)
 
 # 월평균소득
-income = data.iloc[11:18, 0:25]
+income = data.iloc[10:18, 0:25]
 
 # 사례수 삭제
 income = income.drop(
@@ -53,7 +53,7 @@ income = income.drop(
 print(income)
 
 # 학력
-education = data.iloc[19:23, 0:25]
+education = data.iloc[18:23, 0:25]
 
 # 사례수 삭제
 education = education.drop(
@@ -62,7 +62,7 @@ education = education.drop(
 print(education)
 
 # 지역
-location = data.iloc[24:40, 0:25]
+location = data.iloc[23:40, 0:25]
 
 # 사례수 삭제
 location = location.drop(
@@ -71,7 +71,7 @@ location = location.drop(
 print(location)
 
 # 종사상지위
-job = data.iloc[43:47, 0:25]
+job = data.iloc[42:47, 0:25]
 
 # 사례수 삭제
 job = job.drop(
@@ -81,7 +81,7 @@ job = job.drop(
 print(job)
 
 # 상세직업
-job_detail = data.iloc[48:61, 0:25]
+job_detail = data.iloc[47:61, 0:25]
 
 # 사례수 삭제
 job_detail = job_detail.drop(
@@ -91,7 +91,7 @@ job_detail = job_detail.drop(
 print(job_detail)
 
 # 주택형태
-house = data.iloc[62:66, 0:25]
+house = data.iloc[61:66, 0:25]
 
 # 사례수 삭제
 house = house.drop(
@@ -101,7 +101,7 @@ house = house.drop(
 print(house)
 
 # 가족구성
-family = data.iloc[67:71, 0:25]
+family = data.iloc[66:71, 0:25]
 
 # 사례수 삭제
 family = family.drop(
@@ -111,7 +111,7 @@ family = family.drop(
 print(family)
 
 # 가구원수
-family_num = data.iloc[72:74, 0:25]
+family_num = data.iloc[71:74, 0:25]
 
 # 사례수 삭제
 family_num = family_num.drop(
@@ -121,7 +121,7 @@ family_num = family_num.drop(
 print(family_num)
 
 # 가구주와의관계
-relation = data.iloc[75:83, 0:25]
+relation = data.iloc[74:83, 0:25]
 
 # 사례수 삭제
 relation = relation.drop(
@@ -137,22 +137,144 @@ def func(pct, allvals):
 
 
 # all, sex, age, income, education, job, job_detail, house, family, family_num, relation
-
 data_and_titles = [
-        (all.values[0][0:8].astype(float), "2021 전체"), (all.values[0][9:16].astype(float), "2022 전체"),
-        (sex.values[0][0:8].astype(float), "2021 성별"), (sex.values[0][9:16].astype(float), "2022 성별"),
-        (age.values[0][0:8].astype(float), "2021 연령"), (age.values[0][9:16].astype(float), "2022 연령"),
-        (income.values[0][0:8].astype(float), "2021 월평균소득"), (income.values[0][9:16].astype(float), "2022 월평균소득"),
-        (education.values[0][0:8].astype(float), "2021 학력"), (education.values[0][9:16].astype(float), "2022 학력"),
-        (location.values[0][0:8].astype(float), "2021 지역"), (location.values[0][9:16].astype(float), "2022 지역"),
-        (job.values[0][0:8].astype(float), "2021 종사상지위"), (job.values[0][9:16].astype(float), "2022 종사상지위"),
-        (job_detail.values[0][0:8].astype(float), "2021 상세직업"), (job_detail.values[0][9:16].astype(float), "2022 상세직업"),
-        (house.values[0][0:8].astype(float), "2021 주택형태"), (house.values[0][9:16].astype(float), "2022 주택형태"),
-        (family.values[0][0:8].astype(float), "2021 가족구성"), (family.values[0][9:16].astype(float), "2022 가족구성"),
-        (family_num.values[0][0:8].astype(float), "2021 가구원수"), (family_num.values[0][9:16].astype(float), "2022 가구원수"),
-        (relation.values[0][0:8].astype(float), "2021 가구주와의관계"),
-        (relation.values[0][9:16].astype(float), "2022 가구주와의관계"),
+        (all.values[0][0:8].astype(float), "2021 전체_소계"), (all.values[0][9:16].astype(float), "2022 전체_소계"),
 
+        (sex.values[0][0:8].astype(float), "2021 성별_남"), (sex.values[0][9:16].astype(float), "2022 성별_남"),
+        (sex.values[1][0:8].astype(float), "2021 성별_여"), (sex.values[1][9:16].astype(float), "2022 성별_여"),
+
+        (age.values[0][0:8].astype(float), "2021 연령_만10-19세"), (age.values[0][9:16].astype(float), "2022 연령_만10-19세"),
+        (age.values[1][0:8].astype(float), "2021 연령_만20-29세"), (age.values[1][9:16].astype(float), "2022 연령_만20-29세"),
+        (age.values[2][0:8].astype(float), "2021 연령_만30-39세"), (age.values[2][9:16].astype(float), "2022 연령_만30-39세"),
+        (age.values[3][0:8].astype(float), "2021 연령_만40-49세"), (age.values[3][9:16].astype(float), "2022 연령_만40-49세"),
+        (age.values[4][0:8].astype(float), "2021 연령_만50-59세"), (age.values[4][9:16].astype(float), "2022 연령_만50-59세"),
+        (age.values[5][0:8].astype(float), "2021 연령_만60-69세"), (age.values[5][9:16].astype(float), "2022 연령_만60-69세"),
+        (age.values[6][0:8].astype(float), "2021 연령_만70세이상"), (age.values[6][9:16].astype(float), "2022 연령_만70세이상"),
+
+        (income.values[0][0:8].astype(float), "2021 월평균소득_소득없음"),
+        (income.values[0][9:16].astype(float), "2021 월평균소득_소득없음"),
+        (income.values[1][0:8].astype(float), "2021 월평균소득_50만원미만"),
+        (income.values[1][9:16].astype(float), "2022 월평균소득_50만원미만"),
+        (income.values[2][0:8].astype(float), "2021 월평균소득_50-100만원미만"),
+        (income.values[2][9:16].astype(float), "2022 월평균소득_50-100만원미만"),
+        (income.values[3][0:8].astype(float), "2021 월평균소득_100-200만원미만"),
+        (income.values[3][9:16].astype(float), "2022 월평균소득_100-200만원미만"),
+        (income.values[4][0:8].astype(float), "2021 월평균소득_200-300만원미만"),
+        (income.values[4][9:16].astype(float), "2022 월평균소득_200-300만원미만"),
+        (income.values[5][0:8].astype(float), "2021 월평균소득_300-400만원미만"),
+        (income.values[5][9:16].astype(float), "2022 월평균소득_300-400만원미만"),
+        (income.values[6][0:8].astype(float), "2021 월평균소득_500만원이상"),
+        (income.values[6][9:16].astype(float), "2022 월평균소득_500만원이상"),
+
+        (education.values[0][0:8].astype(float), "2021 학력_초졸이하"),
+        (education.values[0][9:16].astype(float), "2022 학력_초졸이하"),
+        (education.values[0][0:8].astype(float), "2021 학력_중졸이하"),
+        (education.values[0][9:16].astype(float), "2022 학력_중졸이하"),
+        (education.values[0][0:8].astype(float), "2021 학력_고졸이하"),
+        (education.values[0][9:16].astype(float), "2022 학력_고졸이하"),
+        (education.values[0][0:8].astype(float), "2021 학력_대졸이하"),
+        (education.values[0][9:16].astype(float), "2022 학력_대졸이하"),
+        (education.values[0][0:8].astype(float), "2021 학력_대학원재학이상"),
+        (education.values[0][9:16].astype(float), "2022 학력_대학원재학이상"),
+
+        (location.values[0][0:8].astype(float), "2021 지역_서울"), (location.values[0][9:16].astype(float), "2022 지역_서울"),
+        (location.values[1][0:8].astype(float), "2021 지역_부산"), (location.values[1][9:16].astype(float), "2022 지역_부산"),
+        (location.values[2][0:8].astype(float), "2021 지역_대구"), (location.values[2][9:16].astype(float), "2022 지역_대구"),
+        (location.values[3][0:8].astype(float), "2021 지역_인천"), (location.values[3][9:16].astype(float), "2022 지역_인천"),
+        (location.values[4][0:8].astype(float), "2021 지역_광주"), (location.values[4][9:16].astype(float), "2022 지역_광주"),
+        (location.values[5][0:8].astype(float), "2021 지역_대전"), (location.values[5][9:16].astype(float), "2022 지역_대전"),
+        (location.values[6][0:8].astype(float), "2021 지역_울산"), (location.values[6][9:16].astype(float), "2022 지역_울산"),
+        (location.values[7][0:8].astype(float), "2021 지역_세종"), (location.values[7][9:16].astype(float), "2022 지역_세종"),
+        (location.values[8][0:8].astype(float), "2021 지역_경기"), (location.values[8][9:16].astype(float), "2022 지역_경기"),
+        (location.values[9][0:8].astype(float), "2021 지역_강원"), (location.values[9][9:16].astype(float), "2022 지역_강원"),
+        (location.values[10][0:8].astype(float), "2021 지역_충북"), (location.values[10][9:16].astype(float), "2022 지역_충북"),
+        (location.values[11][0:8].astype(float), "2021 지역_충남"), (location.values[11][9:16].astype(float), "2022 지역_충남"),
+        (location.values[12][0:8].astype(float), "2021 지역_전북"), (location.values[12][9:16].astype(float), "2022 지역_전북"),
+        (location.values[13][0:8].astype(float), "2021 지역_전남"), (location.values[13][9:16].astype(float), "2022 지역_전남"),
+        (location.values[14][0:8].astype(float), "2021 지역_경북"), (location.values[14][9:16].astype(float), "2022 지역_경북"),
+        (location.values[15][0:8].astype(float), "2021 지역_경남"), (location.values[15][9:16].astype(float), "2022 지역_경남"),
+        (location.values[16][0:8].astype(float), "2021 지역_제주"), (location.values[16][9:16].astype(float), "2022 지역_제주"),
+
+        (job.values[0][0:8].astype(float), "2021 종사상지위_임금근로자"), (job.values[0][9:16].astype(float), "2022 종사상지위_임금근로자"),
+        (job.values[1][0:8].astype(float), "2021 종사상지위_고용주"), (job.values[1][9:16].astype(float), "2022 종사상지위_고용주"),
+        (job.values[2][0:8].astype(float), "2021 종사상지위_단독자영업자"),
+        (job.values[2][9:16].astype(float), "2022 종사상지위_단독자영업자"),
+        (job.values[3][0:8].astype(float), "2021 종사상지위_무급가족종사자"),
+        (job.values[3][9:16].astype(float), "2022 종사상지위_무급가족종사자"),
+        (job.values[4][0:8].astype(float), "2021 종사상지위_무직"), (job.values[4][9:16].astype(float), "2022 종사상지위_무직"),
+
+        (job_detail.values[0][0:8].astype(float), "2021 상세직업_관리자"),
+        (job_detail.values[0][9:16].astype(float), "2022 상세직업_관리자"),
+        (job_detail.values[1][0:8].astype(float), "2021 상세직업_전문가및관련종사자"),
+        (job_detail.values[1][9:16].astype(float), "2022 상세직업_전문가및관련종사자"),
+        (job_detail.values[2][0:8].astype(float), "2021 상세직업_사무종사자"),
+        (job_detail.values[2][9:16].astype(float), "2022 상세직업_사무종사자"),
+        (job_detail.values[3][0:8].astype(float), "2021 상세직업_서비스종사자"),
+        (job_detail.values[3][9:16].astype(float), "2022 상세직업_서비스종사자"),
+        (job_detail.values[4][0:8].astype(float), "2021 상세직업_판매종사자"),
+        (job_detail.values[4][9:16].astype(float), "2022 상세직업_판매종사자"),
+        (job_detail.values[5][0:8].astype(float), "2021 상세직업_농림어업종사자"),
+        (job_detail.values[5][9:16].astype(float), "2022 상세직업_농림어업종사자"),
+        (job_detail.values[6][0:8].astype(float), "2021 상세직업_기능원및관련기능종사자"),
+        (job_detail.values[6][9:16].astype(float), "2022 상세직업_기능원및관련기능종사자"),
+        (job_detail.values[7][0:8].astype(float), "2021 상세직업_장치기계조작및조립종사자"),
+        (job_detail.values[7][9:16].astype(float), "2022 상세직업_장치기계조작및조립종사자"),
+        (job_detail.values[8][0:8].astype(float), "2021 상세직업_단순노무종사자"),
+        (job_detail.values[8][9:16].astype(float), "2022 상세직업_단순노무종사자"),
+        (job_detail.values[9][0:8].astype(float), "2021 상세직업_직업군인"),
+        (job_detail.values[9][9:16].astype(float), "2022 상세직업_직업군인"),
+        (job_detail.values[10][0:8].astype(float), "2021 상세직업_학생"),
+        (job_detail.values[10][9:16].astype(float), "2022 상세직업_학생"),
+        (job_detail.values[11][0:8].astype(float), "2021 상세직업_전업주부"),
+        (job_detail.values[11][9:16].astype(float), "2022 상세직업_전업주부"),
+        (job_detail.values[12][0:8].astype(float), "2021 상세직업_군인(직업군인제외)"),
+        (job_detail.values[12][9:16].astype(float), "2022 상세직업_군인(직업군인제외)"),
+        (job_detail.values[13][0:8].astype(float), "2021 상세직업_기타,무직"),
+        (job_detail.values[13][9:16].astype(float), "2022 상세직업_기타,무직"),
+
+        (house.values[0][0:8].astype(float), "2021 주택형태_단독주택"), (house.values[0][9:16].astype(float), "2022 주택형태_단독주택"),
+        (house.values[1][0:8].astype(float), "2021 주택형태_아파트"), (house.values[1][9:16].astype(float), "2022 주택형태_아파트"),
+        (house.values[2][0:8].astype(float), "2021 주택형태_연립주택,빌라,다세대주택"),
+        (house.values[2][9:16].astype(float), "2022 주택형태_연립주택,빌라,다세대주택"),
+        (house.values[3][0:8].astype(float), "2021 주택형태_비거주용건물내의주택"),
+        (house.values[3][9:16].astype(float), "2022 주택형태_비거주용건물내의주택"),
+        (house.values[4][0:8].astype(float), "2021 주택형태_기타"), (house.values[4][9:16].astype(float), "2022 주택형태_기타"),
+
+        (family.values[0][0:8].astype(float), "2021 가족구성_1인가구"),
+        (family.values[0][9:16].astype(float), "2022 가족구성_1인가구"),
+        (family.values[1][0:8].astype(float), "2021 가족구성_1세대가구"),
+        (family.values[1][9:16].astype(float), "2022 가족구성_1세대가구"),
+        (family.values[2][0:8].astype(float), "2021 가족구성_2세대가구"),
+        (family.values[2][9:16].astype(float), "2022 가족구성_2세대가구"),
+        (family.values[3][0:8].astype(float), "2021 가족구성_3세대가구"),
+        (family.values[3][9:16].astype(float), "2022 가족구성_3세대가구"),
+        (family.values[4][0:8].astype(float), "2021 가족구성_기타"), (family.values[4][9:16].astype(float), "2022 가족구성_기타"),
+
+        (family_num.values[0][0:8].astype(float), "2021 가구원수_1인가구"),
+        (family_num.values[0][9:16].astype(float), "2022 가구원수_1인가구"),
+        (family_num.values[1][0:8].astype(float), "2021 가구원수_2인가구"),
+        (family_num.values[1][9:16].astype(float), "2022 가구원수_2인가구"),
+        (family_num.values[2][0:8].astype(float), "2021 가구원수_3인이상가구"),
+        (family_num.values[2][9:16].astype(float), "2022 가구원수_3인이상가구"),
+
+        (relation.values[0][0:8].astype(float), "2021 가구주와의관계_가구주"),
+        (relation.values[0][9:16].astype(float), "2022 가구주와의관계_가구주"),
+        (relation.values[1][0:8].astype(float), "2021 가구주와의관계_배우자"),
+        (relation.values[1][9:16].astype(float), "2022 가구주와의관계_배우자"),
+        (relation.values[2][0:8].astype(float), "2021 가구주와의관계_자녀"),
+        (relation.values[2][9:16].astype(float), "2022 가구주와의관계_자녀"),
+        (relation.values[3][0:8].astype(float), "2021 가구주와의관계_자녀의배우자"),
+        (relation.values[3][9:16].astype(float), "2022 가구주와의관계_자녀의배우자"),
+        (relation.values[4][0:8].astype(float), "2021 가구주와의관계_손자.녀,그배우자"),
+        (relation.values[4][9:16].astype(float), "2022 가구주와의관계_손자.녀,그배우자"),
+        (relation.values[5][0:8].astype(float), "2021 가구주와의관계_부모(배우자부모포함)"),
+        (relation.values[5][9:16].astype(float), "2022 가구주와의관계_부모(배우자부모포함)"),
+        (relation.values[6][0:8].astype(float), "2021 가구주와의관계_형제자매,그배우자"),
+        (relation.values[6][9:16].astype(float), "2022 가구주와의관계_형제자매,그배우자"),
+        (relation.values[7][0:8].astype(float), "2021 가구주와의관계_기타친인척"),
+        (relation.values[7][9:16].astype(float), "2022 가구주와의관계_기타친인척"),
+        (relation.values[8][0:8].astype(float), "2021 가구주와의관계_동거인"),
+        (relation.values[8][9:16].astype(float), "2022 가구주와의관계_동거인"),
 ]
 
 for data, title in data_and_titles:
