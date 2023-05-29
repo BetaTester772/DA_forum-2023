@@ -13,17 +13,17 @@ dic = {
         "해외직구"      : {"쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)": 0, "전용 앱 구매 (%)": 0}
 }
 
-sex = ""
-age = ""
-income = ""
-education = ""
-location = ""
-job = ""
-job_detail = ""
-house = ""
-family = ""
-family_num = ""
-relation = ""
+sex: str
+age: str
+income: str
+education: str
+location: str
+job: str
+job_detail: str
+house: str
+family: str
+family_num: str
+relation: str
 
 
 def weight():
@@ -1468,7 +1468,7 @@ def get_info():
 
 def select():
     num = -1
-    sel = ""
+    sel: str
     for i in dic.values():
         for j in dic.keys():
             for k in i.keys():
