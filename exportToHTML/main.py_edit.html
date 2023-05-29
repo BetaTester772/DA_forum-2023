@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #cf8e6d;}
+.ln { color: #4b5059; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0"># 개인 간 거래   전용 앱 구매 (%)</span>
+<a name="l2"><span class="ln">2    </span></a><span class="s0"># TV 홈쇼핑    전용 앱 구매 (%)</span>
+<a name="l3"><span class="ln">3    </span></a><span class="s0"># 국내 온라인 쇼핑몰    전용 앱 구매 (%)</span>
+<a name="l4"><span class="ln">4    </span></a><span class="s0"># 해외직구  전용 앱 구매 (%)</span>
+<a name="l5"><span class="ln">5    </span></a><span class="s0"># 해외직구  쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)</span>
+<a name="l6"><span class="ln">6    </span></a><span class="s0"># 국내 온라인 쇼핑몰    쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)</span>
+<a name="l7"><span class="ln">7    </span></a><span class="s0"># TV 홈쇼핑    쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)</span>
+<a name="l8"><span class="ln">8    </span></a><span class="s0"># 개인 간 거래   쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)</span>
+<a name="l9"><span class="ln">9    </span></a><span class="s1">dic </span><span class="s2">= {</span>
+<a name="l10"><span class="ln">10   </span></a>        <span class="s3">&quot;개인 간 거래&quot;   </span><span class="s2">: {</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">, </span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">},</span>
+<a name="l11"><span class="ln">11   </span></a>        <span class="s3">&quot;TV 홈쇼핑&quot;    </span><span class="s2">: {</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">, </span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">},</span>
+<a name="l12"><span class="ln">12   </span></a>        <span class="s3">&quot;국내 온라인 쇼핑몰&quot;</span><span class="s2">: {</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">, </span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">},</span>
+<a name="l13"><span class="ln">13   </span></a>        <span class="s3">&quot;해외직구&quot;      </span><span class="s2">: {</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">, </span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">: </span><span class="s4">0</span><span class="s2">}</span>
+<a name="l14"><span class="ln">14   </span></a><span class="s2">}</span>
+<a name="l15"><span class="ln">15   </span></a>
+<a name="l16"><span class="ln">16   </span></a><span class="s1">sex </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l17"><span class="ln">17   </span></a><span class="s1">age </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l18"><span class="ln">18   </span></a><span class="s1">income </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l19"><span class="ln">19   </span></a><span class="s1">education </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l20"><span class="ln">20   </span></a><span class="s1">location </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l21"><span class="ln">21   </span></a><span class="s1">job </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l22"><span class="ln">22   </span></a><span class="s1">job_detail </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l23"><span class="ln">23   </span></a><span class="s1">house </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l24"><span class="ln">24   </span></a><span class="s1">family </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l25"><span class="ln">25   </span></a><span class="s1">family_num </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l26"><span class="ln">26   </span></a><span class="s1">relation </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l27"><span class="ln">27   </span></a>
+<a name="l28"><span class="ln">28   </span></a>
+<a name="l29"><span class="ln">29   </span></a><span class="s5">def </span><span class="s1">weight</span><span class="s2">():</span>
+<a name="l30"><span class="ln">30   </span></a>    <span class="s5">global </span><span class="s1">dic</span>
+<a name="l31"><span class="ln">31   </span></a>    <span class="s5">if </span><span class="s1">sex </span><span class="s2">== </span><span class="s3">&quot;남&quot;</span><span class="s2">:</span>
+<a name="l32"><span class="ln">32   </span></a>        <span class="s0">#     개인 간 거래   전용 앱 구매 (%) 86.4</span>
+<a name="l33"><span class="ln">33   </span></a>        <span class="s0"># TV 홈쇼핑    전용 앱 구매 (%) 79.4</span>
+<a name="l34"><span class="ln">34   </span></a>        <span class="s0"># 국내 온라인 쇼핑몰    전용 앱 구매 (%) 69.7</span>
+<a name="l35"><span class="ln">35   </span></a>        <span class="s0"># 해외직구  전용 앱 구매 (%) 65.5</span>
+<a name="l36"><span class="ln">36   </span></a>        <span class="s0"># 해외직구  쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)  34.5</span>
+<a name="l37"><span class="ln">37   </span></a>        <span class="s0"># 국내 온라인 쇼핑몰    쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)  30.3</span>
+<a name="l38"><span class="ln">38   </span></a>        <span class="s0"># TV 홈쇼핑    쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)  20.7</span>
+<a name="l39"><span class="ln">39   </span></a>        <span class="s0"># 개인 간 거래   쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)  13.6</span>
+<a name="l40"><span class="ln">40   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;개인 간 거래&quot;</span><span class="s2">][</span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">8</span>
+<a name="l41"><span class="ln">41   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;TV 홈쇼핑&quot;</span><span class="s2">][</span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">7</span>
+<a name="l42"><span class="ln">42   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;국내 온라인 쇼핑몰&quot;</span><span class="s2">][</span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">6</span>
+<a name="l43"><span class="ln">43   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;해외직구&quot;</span><span class="s2">][</span><span class="s3">&quot;전용 앱 구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">6</span>
+<a name="l44"><span class="ln">44   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;해외직구&quot;</span><span class="s2">][</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">4</span>
+<a name="l45"><span class="ln">45   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;국내 온라인 쇼핑몰&quot;</span><span class="s2">][</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">3</span>
+<a name="l46"><span class="ln">46   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;TV 홈쇼핑&quot;</span><span class="s2">][</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">2</span>
+<a name="l47"><span class="ln">47   </span></a>        <span class="s1">dic</span><span class="s2">[</span><span class="s3">&quot;개인 간 거래&quot;</span><span class="s2">][</span><span class="s3">&quot;쇼핑몰 홈페이지/카페 등 인터넷 접속을 통한 온라인구매 (%)&quot;</span><span class="s2">] += </span><span class="s4">1</span>
+<a name="l48"><span class="ln">48   </span></a>    <span class="s5">if </span><span class="s1">sex </span><span class="s2">== </span><span class="s3">&quot;여&quot;</span><span class="s2">:</span>
+
+<a name="l49-1422"><span class="ln">49-1422   </span></a>        <span class="s1">···</span>
+
+<a name="l1423"><span class="ln">1423 </span></a>
+<a name="l1424"><span class="ln">1424 </span></a>
+<a name="l1425"><span class="ln">1425 </span></a><span class="s5">def </span><span class="s1">get_info</span><span class="s2">():</span>
+<a name="l1426"><span class="ln">1426 </span></a>    <span class="s5">global </span><span class="s1">sex</span><span class="s2">, </span><span class="s1">age</span><span class="s2">, </span><span class="s1">income</span><span class="s2">, </span><span class="s1">education</span><span class="s2">, </span><span class="s1">location</span><span class="s2">, </span><span class="s1">job</span><span class="s2">, </span><span class="s1">job_detail</span><span class="s2">, </span><span class="s1">house</span><span class="s2">, </span><span class="s1">family</span><span class="s2">, </span><span class="s1">family_num</span><span class="s2">, </span><span class="s1">relation</span>
+<a name="l1427"><span class="ln">1427 </span></a>
+<a name="l1428"><span class="ln">1428 </span></a>    <span class="s1">inputs </span><span class="s2">= {</span>
+<a name="l1429"><span class="ln">1429 </span></a>            <span class="s3">&quot;성별&quot;      </span><span class="s2">: </span><span class="s3">&quot;남, 여&quot;</span><span class="s2">,</span>
+<a name="l1430"><span class="ln">1430 </span></a>            <span class="s3">&quot;연령&quot;      </span><span class="s2">: </span><span class="s3">&quot;만10-19세, 만20-29세, 만30-39세, 만40-49세, 만50-59세, 만60-69세, 만70세이상&quot;</span><span class="s2">,</span>
+<a name="l1431"><span class="ln">1431 </span></a>            <span class="s3">&quot;월평균소득&quot;   </span><span class="s2">: </span><span class="s3">&quot;소득없음, 50만원미만, 50-100만원미만, 100-200만원미만, 200-300만원미만. 300-400만원미만, 400-500만원미만, 500만원이상&quot;</span><span class="s2">,</span>
+<a name="l1432"><span class="ln">1432 </span></a>            <span class="s3">&quot;학력&quot;      </span><span class="s2">: </span><span class="s3">&quot;초줄이하, 중졸이하, 고졸이하, 대졸이하, 대학원재학이상&quot;</span><span class="s2">,</span>
+<a name="l1433"><span class="ln">1433 </span></a>            <span class="s3">&quot;지역&quot;      </span><span class="s2">: </span><span class="s3">&quot;서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주&quot;</span><span class="s2">,</span>
+<a name="l1434"><span class="ln">1434 </span></a>            <span class="s3">&quot;종사상지위&quot;   </span><span class="s2">: </span><span class="s3">&quot;임금근로자, 고용주, 단독자영업자, 무급가족종사자, 무직&quot;</span><span class="s2">,</span>
+<a name="l1435"><span class="ln">1435 </span></a>            <span class="s3">&quot;상세직업&quot;    </span><span class="s2">: </span><span class="s3">&quot;관리자, 전문가및관련종사자, 사무종사자, 서비스종사자, 판매종사자, 농림어업종사자, 기능원및관련기능종사자, 장치기계조작및조립종사자, 단순노무종사자, 직업군인, 학생, 전업주부, 군인(직업군인제외), 기타/무직&quot;</span><span class="s2">,</span>
+<a name="l1436"><span class="ln">1436 </span></a>            <span class="s3">&quot;주택형태&quot;    </span><span class="s2">: </span><span class="s3">&quot;아파트, '연립주택,빌라,다세대주택', 비거주용건물내의주택, 기타 &quot;</span><span class="s2">,</span>
+<a name="l1437"><span class="ln">1437 </span></a>            <span class="s3">&quot;가족구성&quot;    </span><span class="s2">: </span><span class="s3">&quot;1인가구, 1세대가구, 2세대가구, 3세대가구, 기타&quot;</span><span class="s2">,</span>
+<a name="l1438"><span class="ln">1438 </span></a>            <span class="s3">&quot;가구원수&quot;    </span><span class="s2">: </span><span class="s3">&quot;1인가구, 2인가구, 3인이상가구&quot;</span><span class="s2">,</span>
+<a name="l1439"><span class="ln">1439 </span></a>            <span class="s3">&quot;가구주와의 관계&quot;</span><span class="s2">: </span><span class="s3">&quot;가구주, 가구주의배우자, 가구주의자녀, 자녀의배우자, 손자.녀/그배우자, 부모(배우자부모포함), 형제자매/그배우자, 기타친인척, 동거인&quot;</span>
+<a name="l1440"><span class="ln">1440 </span></a>    <span class="s2">}</span>
+<a name="l1441"><span class="ln">1441 </span></a>
+<a name="l1442"><span class="ln">1442 </span></a>    <span class="s1">user_inputs </span><span class="s2">= []</span>
+<a name="l1443"><span class="ln">1443 </span></a>
+<a name="l1444"><span class="ln">1444 </span></a>    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s5">\n</span><span class="s3">**'다시'를 입력해서 입력을 다시하거나 '종료'를 입력해서 프로그램을 종료할 수 있습니다.**</span><span class="s5">\n\n</span><span class="s3">&quot;</span><span class="s2">)</span>
+<a name="l1445"><span class="ln">1445 </span></a>
+<a name="l1446"><span class="ln">1446 </span></a>    <span class="s5">for </span><span class="s1">key</span><span class="s2">, </span><span class="s1">value </span><span class="s5">in </span><span class="s1">inputs</span><span class="s2">.</span><span class="s1">items</span><span class="s2">():</span>
+<a name="l1447"><span class="ln">1447 </span></a>        <span class="s1">user_input </span><span class="s2">= </span><span class="s1">input</span><span class="s2">(</span><span class="s3">f&quot;</span><span class="s5">{</span><span class="s1">key</span><span class="s5">}</span><span class="s3">을(를) 입력하세요 </span><span class="s5">\n</span><span class="s3">예시: </span><span class="s5">{</span><span class="s1">value</span><span class="s5">}\n</span><span class="s3">&gt;&quot;</span><span class="s2">)</span>
+<a name="l1448"><span class="ln">1448 </span></a>        <span class="s5">if </span><span class="s1">user_input </span><span class="s2">== </span><span class="s3">&quot;다시&quot;</span><span class="s2">:</span>
+<a name="l1449"><span class="ln">1449 </span></a>            <span class="s1">get_info</span><span class="s2">()</span>
+<a name="l1450"><span class="ln">1450 </span></a>        <span class="s5">elif </span><span class="s1">user_input </span><span class="s2">== </span><span class="s3">&quot;종료&quot;</span><span class="s2">:</span>
+<a name="l1451"><span class="ln">1451 </span></a>            <span class="s1">exit</span><span class="s2">()</span>
+<a name="l1452"><span class="ln">1452 </span></a>        <span class="s1">user_inputs</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">user_input</span><span class="s2">)</span>
+<a name="l1453"><span class="ln">1453 </span></a>
+<a name="l1454"><span class="ln">1454 </span></a>    <span class="s1">sex </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">0</span><span class="s2">]</span>
+<a name="l1455"><span class="ln">1455 </span></a>    <span class="s1">age </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">1</span><span class="s2">]</span>
+<a name="l1456"><span class="ln">1456 </span></a>    <span class="s1">income </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">2</span><span class="s2">]</span>
+<a name="l1457"><span class="ln">1457 </span></a>    <span class="s1">education </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">3</span><span class="s2">]</span>
+<a name="l1458"><span class="ln">1458 </span></a>    <span class="s1">location </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">4</span><span class="s2">]</span>
+<a name="l1459"><span class="ln">1459 </span></a>    <span class="s1">job </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">5</span><span class="s2">]</span>
+<a name="l1460"><span class="ln">1460 </span></a>    <span class="s1">job_detail </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">6</span><span class="s2">]</span>
+<a name="l1461"><span class="ln">1461 </span></a>    <span class="s1">house </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">7</span><span class="s2">]</span>
+<a name="l1462"><span class="ln">1462 </span></a>    <span class="s1">family </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">8</span><span class="s2">]</span>
+<a name="l1463"><span class="ln">1463 </span></a>    <span class="s1">family_num </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">9</span><span class="s2">]</span>
+<a name="l1464"><span class="ln">1464 </span></a>    <span class="s1">relation </span><span class="s2">= </span><span class="s1">user_inputs</span><span class="s2">[</span><span class="s4">10</span><span class="s2">]</span>
+<a name="l1465"><span class="ln">1465 </span></a>
+<a name="l1466"><span class="ln">1466 </span></a>    <span class="s0"># sex, age, income, education, location, job, job_detail, house, family, family_num, relation = input().split(', ')</span>
+<a name="l1467"><span class="ln">1467 </span></a>
+<a name="l1468"><span class="ln">1468 </span></a>
+<a name="l1469"><span class="ln">1469 </span></a><span class="s5">def </span><span class="s1">select</span><span class="s2">():</span>
+<a name="l1470"><span class="ln">1470 </span></a>    <span class="s1">num </span><span class="s2">= -</span><span class="s4">1</span>
+<a name="l1471"><span class="ln">1471 </span></a>    <span class="s1">sel </span><span class="s2">= </span><span class="s3">&quot;&quot;</span>
+<a name="l1472"><span class="ln">1472 </span></a>    <span class="s5">for </span><span class="s1">i </span><span class="s5">in </span><span class="s1">dic</span><span class="s2">.</span><span class="s1">values</span><span class="s2">():</span>
+<a name="l1473"><span class="ln">1473 </span></a>        <span class="s5">for </span><span class="s1">j </span><span class="s5">in </span><span class="s1">dic</span><span class="s2">.</span><span class="s1">keys</span><span class="s2">():</span>
+<a name="l1474"><span class="ln">1474 </span></a>            <span class="s5">for </span><span class="s1">k </span><span class="s5">in </span><span class="s1">i</span><span class="s2">.</span><span class="s1">keys</span><span class="s2">():</span>
+<a name="l1475"><span class="ln">1475 </span></a>                <span class="s5">for </span><span class="s1">l </span><span class="s5">in </span><span class="s1">i</span><span class="s2">.</span><span class="s1">values</span><span class="s2">():</span>
+<a name="l1476"><span class="ln">1476 </span></a>                    <span class="s5">if </span><span class="s1">l </span><span class="s2">&gt; </span><span class="s1">num</span><span class="s2">:</span>
+<a name="l1477"><span class="ln">1477 </span></a>                        <span class="s1">num </span><span class="s2">= </span><span class="s1">l</span>
+<a name="l1478"><span class="ln">1478 </span></a>                        <span class="s1">sel </span><span class="s2">= </span><span class="s1">j </span><span class="s2">+ </span><span class="s3">' - ' </span><span class="s2">+ </span><span class="s1">k</span>
+<a name="l1479"><span class="ln">1479 </span></a>    <span class="s5">return </span><span class="s1">sel</span>
+<a name="l1480"><span class="ln">1480 </span></a>
+<a name="l1481"><span class="ln">1481 </span></a>
+<a name="l1482"><span class="ln">1482 </span></a><span class="s5">def </span><span class="s1">main</span><span class="s2">():</span>
+<a name="l1483"><span class="ln">1483 </span></a>    <span class="s1">get_info</span><span class="s2">()</span>
+<a name="l1484"><span class="ln">1484 </span></a>
+<a name="l1485"><span class="ln">1485 </span></a>    <span class="s1">weight</span><span class="s2">()</span>
+<a name="l1486"><span class="ln">1486 </span></a>
+<a name="l1487"><span class="ln">1487 </span></a>    <span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;최적의 판매 수단:&quot;</span><span class="s2">, </span><span class="s1">select</span><span class="s2">())</span>
+<a name="l1488"><span class="ln">1488 </span></a>
+<a name="l1489"><span class="ln">1489 </span></a>
+<a name="l1490"><span class="ln">1490 </span></a><span class="s5">if </span><span class="s1">__name__ </span><span class="s2">== </span><span class="s3">'__main__'</span><span class="s2">:</span>
+<a name="l1491"><span class="ln">1491 </span></a>    <span class="s1">main</span><span class="s2">()</span>
+<a name="l1492"><span class="ln">1492 </span></a></pre>
+</body>
+</html>
